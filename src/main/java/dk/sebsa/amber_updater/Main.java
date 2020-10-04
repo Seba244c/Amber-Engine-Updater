@@ -21,5 +21,10 @@ public class Main {
 		try {
 			FileUtils.moveFile(download, newFile);
 		} catch (IOException e) { e.printStackTrace(); }
+		
+		Runtime rt = Runtime.getRuntime();
+		try {
+			rt.exec("java -jar \"" +newFile.getAbsolutePath() +"\"");
+		} catch (IOException e) {e.printStackTrace(); }
 	}
 }
